@@ -1,9 +1,8 @@
-import java.util.List;
+
 
 public class Pokemon {
     private String name;
-    private int base_experience;
-    private List<Ability> abilities;
+    private PokemonAbilities[] abilities;
 
     public String getName() {
         return name;
@@ -13,28 +12,24 @@ public class Pokemon {
         this.name = name;
     }
 
-    public List<Ability> getAbilities() {
+
+    public PokemonAbilities[] getAbilities() {
         return this.abilities;
     }
 
-    public void setAbilities(List<Ability> abilities) {
+    public void setAbilities(PokemonAbilities[] abilities) {
         this.abilities = abilities;
-    }
-    
-
-    public int getBase_experience() {
-        return this.base_experience;
-    }
-
-    public void setBase_experience(int base_experience) {
-        this.base_experience = base_experience;
     }
 
     @Override
     public String toString() {
+        String ability = "";
+        for (PokemonAbilities pokemonAbilities : abilities) {
+            ability += pokemonAbilities.toString();
+        }
         return "{" +
             " name='" + getName() + "'" +
-            ", abilities='" + getAbilities() + "'" +"base experience="+getBase_experience()+
+            ", abilities='" + ability + "'" +
             "}";
     }
 
