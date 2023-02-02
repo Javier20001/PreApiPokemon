@@ -11,14 +11,14 @@ public class ApiPruebaPokemon extends javax.swing.JFrame{
     private static HttpClient httpcliente = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
 
     public ApiPruebaPokemon(String pokemon){
-        
+        Pokemon p = null;
         final HttpRequest requestPost = HttpRequest.newBuilder().GET()
                 .uri(URI.create("https://pokeapi.co/api/v2/pokemon/"+pokemon)).build();
         try {
             final HttpResponse<String> response = httpcliente.send(requestPost, HttpResponse.BodyHandlers.ofString());
             Gson gson = new Gson();
-            Pokemon p = gson.fromJson(response.body(), Pokemon.class); 
-            System.out.println(p.toString());
+            p = gson.fromJson(response.body(), Pokemon.class); 
+            System.out.println(p.getStats());
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

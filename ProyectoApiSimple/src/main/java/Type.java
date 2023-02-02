@@ -1,9 +1,5 @@
-public class Ability {
+public class Type {
     private String name;
-
-    public Ability(String name) {
-        this.name = name;
-    }
 
     public String getName() {
         return this.name;

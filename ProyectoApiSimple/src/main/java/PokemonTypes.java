@@ -1,6 +1,7 @@
-class PokemonAbilities{
+public class PokemonTypes {
     private int slot;
-    private Ability ability;
+    private Type type;
+
 
     public int getSlot() {
         return this.slot;
@@ -10,19 +11,20 @@ class PokemonAbilities{
         this.slot = slot;
     }
 
-    public Ability getAbility() {
-        return this.ability;
+    public Type getType() {
+        return this.type;
     }
 
-    public void setAbility(Ability ability) {
-        this.ability = ability;
+    public void setType(Type type) {
+        this.type = type;
     }
-    
+
+
     @Override
     public String toString() {
         return "{" +
             " slot='" + getSlot() + "'" +
-            ", ability='" + getAbility() + "'" +
+            ", type='" + getType() + "'" +
             "}";
     }
 

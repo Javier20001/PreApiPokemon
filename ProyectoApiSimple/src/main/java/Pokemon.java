@@ -1,8 +1,14 @@
-
+import java.util.List;
 
 public class Pokemon {
     private String name;
-    private PokemonAbilities[] abilities;
+    private int id;
+    private int weight;
+    private int base_experience;
+    private List<PokemonAbilities> abilities;
+    private List<PokemonTypes> types;
+    private List<PokemonStats> stats;
+    private Sprites sprites;
 
     public String getName() {
         return name;
@@ -12,25 +18,78 @@ public class Pokemon {
         this.name = name;
     }
 
-
-    public PokemonAbilities[] getAbilities() {
+    public List<PokemonAbilities> getAbilities() {
         return this.abilities;
     }
 
-    public void setAbilities(PokemonAbilities[] abilities) {
+    public void setAbilities(List<PokemonAbilities> abilities) {
         this.abilities = abilities;
+    }
+    
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getBase_experience() {
+        return this.base_experience;
+    }
+
+    public void setBase_experience(int base_experience) {
+        this.base_experience = base_experience;
+    }
+
+
+    public List<PokemonTypes> getTypes() {
+        return this.types;
+    }
+
+    public void setTypes(List<PokemonTypes> types) {
+        this.types = types;
+    }    
+
+
+    public int getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+
+    public Sprites getSprites() {
+        return this.sprites;
+    }
+
+    public void setSprites(Sprites sprites) {
+        this.sprites = sprites;
+    }
+
+
+    public List<PokemonStats> getStats() {
+        return this.stats;
+    }
+
+    public void setStats(List<PokemonStats> stats) {
+        this.stats = stats;
     }
 
     @Override
     public String toString() {
-        String ability = "";
-        for (PokemonAbilities pokemonAbilities : abilities) {
-            ability += pokemonAbilities.toString();
-        }
         return "{" +
             " name='" + getName() + "'" +
-            ", abilities='" + ability + "'" +
+            ", id='" + getId() + "'" +
+            ", base_experience='" + getBase_experience() + "'" +
+            ", abilities='" + getAbilities() + "'" +
+            ", types='" + getTypes() + "'" +
+            ", weight='" + getWeight() + "'" +
+            ", Sprites='" + getSprites() + "'" +
+            ", Stats='" + getStats() + "'" +
             "}";
     }
-
+    
 }
